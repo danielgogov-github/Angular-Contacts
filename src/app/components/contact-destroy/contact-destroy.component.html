@@ -1,0 +1,24 @@
+<div>
+    <div *ngIf="!deleted">
+        <div *ngIf="contact">
+            <div class="text-right">
+                <a [routerLink]="['/']"><button class="btn btn-success">Back</button></a>
+            </div>    
+        
+            <p class="text-center">Are you sure you want to delete <span class="font-weight-bold">{{ contact.first_name }} {{ contact.last_name }}</span> ?</p>
+        
+            <div class="text-center mb-3">
+                <button (click)="destroy(contact.id)" class="btn btn-danger m-1">Yes</button>
+                <a [routerLink]="['/']" class="text-decoration-none text-light"><button class="btn btn-dark m-1">No</button></a>
+            </div>
+        </div>
+        
+        <div *ngIf="!completed" class="text-center m-5">
+            <h2>Please wait...</h2>
+        </div>
+    </div>
+    
+    <div *ngIf="deleted" class="text-center m-5">
+        <h2>Deleting...</h2>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<div *ngIf="!submitted">
+    <div class="text-right">
+        <a [routerLink]="['/']"><button class="btn btn-success">Back</button></a>
+    </div>
+    
+    <div class="row">
+        <div class="col-sm-0 col-xl-4"></div>
+    
+        <div class="col-sm-12 col-xl-4">
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label for="firstName">Firstname</label>
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="text" 
+                                name="firstName" 
+                                class="form-control"
+                                [(ngModel)]="contact.first_name"
+                            >
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label for="lastName">Lastname</label>
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="text" 
+                                name="lastName" 
+                                class="form-control" 
+                                [(ngModel)]="contact.last_name"
+                            >
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-2 text-center">
+                            <label for="number">Number</label>
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="text" 
+                                name="number" 
+                                class="form-control" 
+                                [(ngModel)]="contact.number"
+                            >
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button (click)="submit()" class="btn btn-success mt-2 ml-5">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    
+        <div class="col-sm-0 col-xl-4"></div>
+    </div>
+</div>
+
+<div *ngIf="submitted" class="text-center m-5">
+    <h2>Saving...</h2>
+</div>
